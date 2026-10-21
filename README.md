@@ -1,7 +1,5 @@
 # Rapid Prototyping for Climate Control Development
 
-**Internship Project | Mercedes-Benz AG | 2023**  
-**M.Sc. Automotive Software Engineering — Technische Universität Chemnitz**
 
 ## Project Overview
 
@@ -24,8 +22,6 @@ A **dSPACE MicroAutoBox II** was used as a real-time prototype controller. The s
 ## Results and Conclusion
 
 The internship resulted in a functioning **hardware–software prototyping setup** for developing and testing EV climate-control functions. Testing demonstrated the operation of stepper drivers and the blower through the prototype environment.
-
-The report also notes that **complete sensor testing had not yet been carried out** at the end of the documented work.
 
 This project strengthened my experience in automotive embedded systems, model-based development, LIN communication, real-time prototyping, integration, and functional testing.
 

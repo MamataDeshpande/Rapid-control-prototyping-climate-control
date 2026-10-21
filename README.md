@@ -11,6 +11,21 @@ A **dSPACE MicroAutoBox II** was used as a real-time prototype controller. The s
 
 **MATLAB/Simulink** and **Stateflow** were used for model-based software development. **LIN (Local Interconnect Network)** supported communication with relevant sensors and actuators, and **dSPACE ControlDesk** was used to monitor signals, adjust parameters, and conduct real-time experiments.
 
+## System Architecture
+
+The prototype combined a real-time controller with climate-control sensors and actuators. The following diagram illustrates the main components at a general level; it is **not an original hardware schematic** or a reproduction of the vehicle wiring.
+
+```mermaid
+flowchart TB
+    Sensors["Climate-control sensor inputs<br/>Analog and LIN"] --> Controller["dSPACE MicroAutoBox II<br/>Prototype controller"]
+    Controller --> Interface["LIN communication interfaces"]
+    Interface --> Steppers["HVAC stepper motor drivers"]
+    Interface --> Blower["Blower"]
+    Steppers --> Flaps["Air inlet, distribution<br/>and temperature-blend flaps"]
+```
+
+The controller executes prototype control functions, processes sensor inputs, and communicates with HVAC components. Actuator commands can then be monitored and checked during testing.
+
 ## Project Work
 
 - Worked on hardware–software integration of climate-control components with the prototype ECU.
@@ -21,15 +36,27 @@ A **dSPACE MicroAutoBox II** was used as a real-time prototype controller. The s
 
 ## Development Workflow
 
-The prototype was developed and tested through a model-based workflow:
+The control software was developed with MATLAB/Simulink and Stateflow, built for real-time execution on the MicroAutoBox II, and observed during experiments using dSPACE ControlDesk.
 
-**MATLAB / Simulink / Stateflow** (control model development) → **dSPACE MicroAutoBox II** (real-time execution) → **LIN communication** (sensor and actuator interfaces) → **dSPACE ControlDesk** (monitoring and testing).
+```mermaid
+flowchart TB
+    Model["MATLAB / Simulink / Stateflow<br/>Model-based development"] --> Build["Build controller application"]
+    Build --> ECU["dSPACE MicroAutoBox II<br/>Real-time execution"]
+    ECU --> HVAC["Connected HVAC sensors and actuators"]
+    Desk["dSPACE ControlDesk<br/>Signal monitoring and test commands"] <-->|"Experiment interface"| ECU
+```
+
+The diagrams summarize the development workflow only. They do not include company-specific software architecture, LIN Description Files, settings, or communication frames.
 
 ## Testing and Validation
 
-Using ControlDesk, the stepper drivers and blower were tested separately to observe their response to control requests. Stepper testing included checking commanded positions and movement of the HVAC flaps. LIN communication and component behavior were monitored to support troubleshooting and system integration.
+The prototype was evaluated through component-level tests using ControlDesk. The documented test work included:
 
-The internship report documents successful stepper-driver and blower testing; **complete sensor testing was still pending**.
+- **Stepper motor response:** Applied position requests and checked how the flap actuators responded.
+- **Blower operation:** Monitored and adjusted blower commands during prototype testing.
+- **LIN communication:** Observed communication behavior while integrating and troubleshooting the connected components.
+
+The report documents functioning stepper-driver and blower demonstrations. **Complete sensor testing was still pending** at the end of the documented internship work.
 
 ## Technical Skills
 

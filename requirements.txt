@@ -1,2 +1,0 @@
-# Only the optional plotting example needs a third-party dependency.
-matplotlib>=3.7,<4

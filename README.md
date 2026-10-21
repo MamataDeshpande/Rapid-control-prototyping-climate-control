@@ -19,6 +19,28 @@ A **dSPACE MicroAutoBox II** was used as a real-time prototype controller. The s
 - Used ControlDesk to test stepper movement, requested positions, blower operation, and communication behavior.
 - Used Git and Jira to support collaborative development and issue tracking.
 
+## Development Workflow
+
+The prototype was developed and tested through a model-based workflow:
+
+**MATLAB / Simulink / Stateflow** (control model development) → **dSPACE MicroAutoBox II** (real-time execution) → **LIN communication** (sensor and actuator interfaces) → **dSPACE ControlDesk** (monitoring and testing).
+
+## Testing and Validation
+
+Using ControlDesk, the stepper drivers and blower were tested separately to observe their response to control requests. Stepper testing included checking commanded positions and movement of the HVAC flaps. LIN communication and component behavior were monitored to support troubleshooting and system integration.
+
+The internship report documents successful stepper-driver and blower testing; **complete sensor testing was still pending**.
+
+## Technical Skills
+
+| Area | Tools and Technologies |
+| --- | --- |
+| Model-based development | MATLAB, Simulink, Stateflow |
+| Rapid control prototyping | dSPACE MicroAutoBox II |
+| Vehicle communication | LIN |
+| Testing and monitoring | dSPACE ControlDesk, functional testing |
+| Development workflow | Git, Jira |
+
 ## Results and Conclusion
 
 The internship resulted in a functioning **hardware–software prototyping setup** for developing and testing EV climate-control functions. Testing demonstrated the operation of stepper drivers and the blower through the prototype environment.
